@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant Tycoon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-classic">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-stats">
+      <div class="stat-item"><span>💵</span><span id="money">$1000</span></div>
+      <div class="stat-item"><span>🍜</span><span id="price">$0.00</span></div>
+      <div class="stat-item"><span>⭐</span><span id="popularity">50%</span></div>
+      <div class="stat-item"><span>👥</span><span id="customers">0</span></div>
+      <div class="stat-item"><span>📅</span><span id="day">1 / 7</span></div>
+    </div>
+    <div class="top-right">
+      <div id="clock" class="clock-ui">08:00</div>
+      <button id="themeToggle" class="theme-toggle">💡 Theme</button>
+    </div>
+  </div>
+
+  <!-- LEFT CUSTOMER LOGS -->
+  <div id="customerLogArea" class="customer-log-area"></div>
+
+  <!-- RIGHT SYSTEM TOASTS -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- MAIN CENTER AREA -->
+  <div class="main-container">
+    <!-- RESTAURANT BOARD (살짝 왼쪽) -->
+    <div class="board-panel">
+      <h2>🍽 Restaurant Dashboard</h2>
+      <div class="board-row">
+        <span>Customers today</span>
+        <span id="boardCustomers">0</span>
+      </div>
+      <div class="board-row">
+        <span>Income today</span>
+        <span id="boardIncome">$0.00</span>
+      </div>
+      <div class="board-row">
+        <span>Satisfaction today</span>
+        <span id="boardSatisfaction">0%</span>
+      </div>
+      <div class="board-row">
+        <span>Total meals sold</span>
+        <span id="boardMeals">0</span>
+      </div>
+      <div class="board-note" id="boardNote">
+        Set your menu prices, then press “Open Day”.
+      </div>
+    </div>
+
+    <!-- GRAPH PANEL (오른쪽) -->
+    <div class="graph-panel">
+      <h2>📊 Income & Popularity Trend</h2>
+      <canvas id="trendCanvas" width="420" height="220"></canvas>
+      <div class="graph-legend">
+        <div class="legend-item">
+          <span class="box income"></span> Income per day
+        </div>
+        <div class="legend-item">
+          <span class="box popularity"></span> Popularity trend
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU EDITOR (DROP-UP) -->
+  <div class="menu-editor-wrapper">
+    <button id="menuToggleBtn" class="menu-toggle-btn">🍽 EDIT MENU</button>
+    <div id="menuPanel" class="menu-panel hidden">
+      <h3>Today’s Menu</h3>
+      <div id="menuList"></div>
+      <p class="menu-hint">
+        Tip: Wild prices will scare customers away. Keep it near the base price.
+      </p>
+    </div>
+  </div>
+
+  <!-- BOTTOM ACTION BAR -->
+  <div class="action-bar">
+    <button id="openDayBtn">▶ Open Day</button>
+    <button id="priceUpBtn">🔼 Global +1</button>
+    <button id="priceDownBtn">🔽 Global -1</button>
+    <button id="advertiseBtn">📢 Advertise</button>
+    <button id="eventBtn">🎲 Event</button>
+    <button id="resetBtn">🔁 Reset</button>
+  </div>
+
+  <!-- DAY SUMMARY PANEL -->
+  <div id="dayOverlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h2 id="overlayDayTitle">Day 1 Summary</h2>
+      <p>
+        <b>Customers today:</b> <span id="overlayCust">0</span><br />
+        <b>Income today:</b> <span id="overlayIncome">$0.00</span><br />
+        <b>Avg satisfaction:</b> <span id="overlaySatisfaction">0%</span><br />
+        <b>Popularity now:</b> <span id="overlayPopNow">50%</span>
+      </p>
+      <button id="nextDayBtn" class="primary-btn">OK</button>
+    </div>
+  </div>
+
+  <!-- FINAL SCORE PANEL -->
+  <div id="finalOverlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h2>🏆 Final Results (7 Days)</h2>
+      <p>
+        <b>Total money:</b> <span id="finalMoney">$0</span><br />
+        <b>Total customers:</b> <span id="finalCustomers">0</span><br />
+        <b>Average popularity:</b> <span id="finalAvgPop">0%</span><br />
+        <b>Best day income:</b> <span id="finalBestIncome">$0</span><br />
+        <b>Total meals sold:</b> <span id="finalMeals">0</span>
+      </p>
+      <p class="final-score">
+        <b>Final Score:</b> <span id="finalScore">0</span>/100<br />
+        <b>Rank:</b> <span id="finalRank">C</span>
+      </p>
+      <button id="playAgainBtn" class="primary-btn">Play Again</button>
+    </div>
+  </div>
+
+  <button id="skipBtn" class="skip-floating disabled">⏩ Skip</button>
+
+  <script src="game.js"></script>
+</body>
+</html>
