@@ -741,7 +741,6 @@ document.getElementById("nextDayBtn").onclick = () => {
   }
 };
 
-// 메뉴 드롭업 토글
 if (menuToggleBtn) {
   menuToggleBtn.addEventListener("click", () => {
     menuPanel.classList.toggle("hidden");
@@ -769,3 +768,4 @@ updateUI();
 resetClock();
 drawGraph();
 showToast("Welcome to Restaurant Tycoon! Edit your menu, then press Open Day.");
+
