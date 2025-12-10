@@ -9,7 +9,6 @@ body {
   color: #f5f5f5;
 }
 
-/* ================= TOP BAR ================= */
 
 .top-bar {
   position: fixed;
@@ -61,7 +60,7 @@ body {
   font-size: 13px;
 }
 
-/* ================= MAIN LAYOUT ================= */
+/* main 그 레이아ㅣ웃 */
 
 .main-container {
   padding-top: 70px;
@@ -71,7 +70,6 @@ body {
   gap: 30px;
 }
 
-/* LEFT CUSTOMER LOGS */
 
 .customer-log-area {
   position: fixed;
@@ -103,7 +101,6 @@ body {
   }
 }
 
-/* RIGHT TOASTS */
 
 .toast-container {
   position: fixed;
@@ -144,7 +141,8 @@ body {
   }
 }
 
-/* ================= CENTER PANELS ================= */
+/* 가운데에다가 놓을거 
+   그 뭐냐 정보 패널*/
 
 .board-panel,
 .graph-panel {
@@ -222,7 +220,7 @@ body {
   background: #ffcc4a;
 }
 
-/* ================= MENU EDITOR ================= */
+/* 메뉴*/
 
 .menu-editor-wrapper {
   position: fixed;
@@ -315,7 +313,7 @@ body {
   color: #a2a7c7;
 }
 
-/* ================= ACTION BAR ================= */
+/*액셔납ㅁ */
 
 .action-bar {
   position: fixed;
@@ -420,7 +418,6 @@ body {
     opacity: 1;
 }
 
-/* Clock layout stays same, no change */
 
 
 /* ================= THEME VARIANTS ================= */
@@ -464,3 +461,4 @@ body.theme-neon .action-bar button:hover {
     display: none;
   }
 }
+
